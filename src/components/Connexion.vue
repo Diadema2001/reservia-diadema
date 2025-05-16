@@ -2,8 +2,11 @@
   <div id="app">
     <div v-if="showLoginModal" class="fenetreModale">
       <div class="modal">
-        <span class="fermer" @click="closeLoginModal">&times;</span>
-        <form @submit.prevent="submitLogin">
+        <span class="fermer" @click="goHome">&times;</span>
+        <form @submit.prevent="seConnecter">
+
+          <div class="logo"><img src="/src/assets/images/logo/Reservia@3x.png" alt="logo reservia"></div>
+
           <h2>Connexion</h2>
 
           <label for="loginEmail">Email :</label>
@@ -29,7 +32,7 @@
           </p>
 
           <div class="boutons">
-            <button type="button" @click="resetForm" class="bouton-annuler">
+            <button type="button" @click="goHome" class="bouton-annuler">
               Annuler
             </button>
             <button type="submit" class="bouton-connexion">Se connecter</button>
@@ -54,7 +57,7 @@ export default {
   methods: {
     async seConnecter() {
       try {
-        const response = await fetch("http://localhost:3000/api/login", {
+        const response = await fetch("http://localhost:3000/api/connexion", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: this.email, password: this.password }),
@@ -63,7 +66,7 @@ export default {
 
         if (response.ok) {
           alert(data.message);
-          //Rediriger ou sauvegarder l'utilisateur dans le sate
+          //Rediriger ou sauvegarder l'utilisateur dans le site
         } else {
           alert(data.message);
         }
@@ -72,6 +75,10 @@ export default {
         alert("Erreur lors de la connexion.");
       }
     },
+
+    goHome() {
+      this.$router.push('/');
+    }
   },
   name: "Connexion",
   components: {

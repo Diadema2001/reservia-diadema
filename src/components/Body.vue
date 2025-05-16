@@ -8,11 +8,11 @@
 					<p class="p2">Auberge de la Cannebierre</p>
 					<p class="p3">Nuit à partir de <span>25€</span></p>
 					<div class="ratings">
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-regular fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="far fa-star"></i>
 					</div>
 				</div>
 				<div class="hebergement1">
@@ -20,11 +20,11 @@
 					<p class="p2">Hôtel du port</p>
 					<p class="p3">Nuit à partir de <span>52€</span></p>
 					<div class="ratings">
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
 					</div>
 				</div>
 				<div class="hebergement1">
@@ -32,11 +32,11 @@
 					<p class="p2">Hôtel Les Mouettes</p>
 					<p class="p3">Nuit à partir de <span>76€</span></p>
 					<div class="ratings">
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-regular fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="far fa-star"></i>
 					</div>
 				</div>
 				<div class="hebergement1">
@@ -44,11 +44,11 @@
 					<p class="p2">Hôtel de la mer</p>
 					<p class="p3">Nuit à partir de <span>46€</span></p>
 					<div class="ratings">
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-regular fa-star"></i>
-						<i class="fa-regular fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="far fa-star"></i>
+						<i class="far fa-star"></i>
 					</div>
 				</div>
 				<div class="hebergement1">
@@ -56,11 +56,11 @@
 					<p class="p2">Auberge Le Panier</p>
 					<p class="p3">Nuit à partir de <span>23€</span></p>
 					<div class="ratings">
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-regular fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="far fa-star"></i>
 					</div>
 				</div>
 				<div class="hebergement1">
@@ -68,11 +68,11 @@
 					<p class="p2">Hôtel chez Amina</p>
 					<p class="p3">Nuit à partir de <span>96€</span></p>
 					<div class="ratings">
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
 					</div>
 				</div>
 				<button class="bouton">Afficher plus</button>
@@ -88,11 +88,11 @@
 						<p class="p4">Hôtel Le soleil du matin</p>
 						<p class="p5">Nuit à partir de <span>128€</span></p>
 						<div class="ratings1">
-							<i class="fa-solid fa-star"></i>
-							<i class="fa-solid fa-star"></i>
-							<i class="fa-solid fa-star"></i>
-							<i class="fa-solid fa-star"></i>
-							<i class="fa-solid fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
 						</div>
 					</div>
 				</div>
@@ -102,11 +102,11 @@
 						<p class="p4">Au cœur de l'eau Chambres d'hôtes</p>
 						<p class="p5">Nuit à partir de <span>71€</span></p>
 						<div class="ratings2">
-							<i class="fa-solid fa-star"></i>
-							<i class="fa-solid fa-star"></i>
-							<i class="fa-solid fa-star"></i>
-							<i class="fa-solid fa-star"></i>
-							<i class="fa-regular fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="far fa-star"></i>
 						</div>
 					</div>
 				</div>
@@ -116,11 +116,11 @@
 						<p class="p4">Hôtel Tout bleu et blanc</p>
 						<p class="p5">Nuit à partir de <span>68€</span></p>
 						<div class="ratings1">
-							<i class="fa-solid fa-star"></i>
-							<i class="fa-solid fa-star"></i>
-							<i class="fa-solid fa-star"></i>
-							<i class="fa-solid fa-star"></i>
-							<i class="fa-regular fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="far fa-star"></i>
 						</div>
 					</div>
 				</div>

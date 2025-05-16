@@ -2,8 +2,11 @@
   <div id="app">
     <div v-if="showModal" class="fenetreModale">
       <div class="modal">
-        <span class="fermer" @click="closeModal">&times;</span>
-        <form @submit.prevent="submitForm">
+        <span class="fermer" @click="goHome">&times;</span>
+        <form @submit.prevent="envoyerFormulaire">
+
+          <div class="logo"><img src="/src/assets/images/logo/Reservia@3x.png" alt="logo reservia"></div>
+
           <h2>Inscription</h2>
 
           <label for="name">Nom :</label>
@@ -60,15 +63,14 @@
           </p>
 
           <div class="boutons">
-            <button type="button" @click="resetForm" class="bouton-annuler">
+            <button type="button" @click="goHome" class="bouton-annuler">
               Annuler
             </button>
             <button type="submit" class="valider-inscription">
               Enregistrer
             </button>
           </div>
-          <router-link to="/connexion" class="bouton-connexion" @click="login"
-            >Vous avez déjà un compte ?</router-link
+          <router-link to="/connexion" class="bouton-connexion" @click="login">Vous avez déjà un compte ?</router-link
           >
         </form>
       </div>
@@ -81,6 +83,10 @@
 <script>
 import Footer from "./Footer.vue";
 export default {
+  name: "Inscription",
+  components: {
+    Footer,
+  },
   data() {
     return {
       name: "",
@@ -90,36 +96,136 @@ export default {
       password: "",
       confirmPassword: "",
       showModal: true,
+      submitted: false,
+      passwordError: "",
+      loading: false
     };
   },
+  watch: {
+    // Vérifier si les mots de passe correspondent lors de la saisie
+    confirmPassword(newVal) {
+      this.validatePassword();
+    },
+    password(newVal) {
+      this.validatePassword();
+    }
+  },
   methods: {
+    validatePassword() {
+      // Vérifier que les mots de passe correspondent
+      if (this.password !== this.confirmPassword && this.confirmPassword !== "") {
+        this.passwordError = "Les mots de passe ne correspondent pas";
+        return false;
+      } else if (this.password.length < 6 && this.password !== "") {
+        this.passwordError = "Le mot de passe doit contenir au moins 6 caractères";
+        return false;
+      } else {
+        this.passwordError = "";
+        return true;
+      }
+    },
+    validateForm() {
+      // Validation de l'email avec regex
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(this.email)) {
+        alert("Format d'email invalide");
+        return false;
+      }
+      
+      // Validation du numéro de téléphone
+      const phoneRegex = /^[0-9]{10}$/;
+      if (!phoneRegex.test(this.phone)) {
+        alert("Le numéro de téléphone doit contenir 10 chiffres");
+        return false;
+      }
+      
+      // Vérification des mots de passe
+      if (!this.validatePassword()) {
+        return false;
+      }
+      
+      return true;
+    },
     async envoyerFormulaire() {
+      if (!this.validateForm()) {
+        return;
+      }
+      
+      this.loading = true;
+      
       const utilisateur = {
-        name: this.name,
-        firstname: this.firstname,
-        phone: this.phone,
-        email: this.email,
+        name: this.name.trim(),
+        firstname: this.firstname.trim(),
+        phone: this.phone.trim(),
+        email: this.email.trim().toLowerCase(),
         password: this.password,
+        role: "client" // Définir le rôle par défaut
       };
 
       try {
         const response = await fetch("http://localhost:3000/api/inscription", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
           body: JSON.stringify(utilisateur),
+          credentials: "include" // Pour gérer les cookies de session
         });
 
         const data = await response.json();
-        alert(data.message);
+        
+        if (response.ok) {
+          this.submitted = true;
+          
+          // Attendre 2 secondes avant de rediriger
+          setTimeout(() => {
+            // Stocker les informations de l'utilisateur dans le localStorage ou dans un store Vuex
+            localStorage.setItem('user', JSON.stringify({
+              id: data.userId,
+              name: this.name,
+              firstname: this.firstname,
+              email: this.email,
+              role: "client"
+            }));
+            
+            // Rediriger vers la page d'accueil ou le tableau de bord
+            this.$router.push('/');
+          }, 2000);
+        } else {
+          // Gérer les erreurs retournées par l'API
+          alert(data.message || "Erreur lors de l'inscription");
+        }
       } catch (error) {
-        alert("Erreur lors de l'envoi du formulaire");
+        console.error("Erreur:", error);
+        alert("Erreur lors de la connexion au serveur. Veuillez réessayer plus tard.");
+      } finally {
+        this.loading = false;
       }
     },
+    login() {
+      this.$router.push('/connexion');
+    },
+    goHome() {
+      this.$router.push('/');
+    },
+    resetForm() {
+      this.name = "";
+      this.firstname = "";
+      this.phone = "";
+      this.email = "";
+      this.password = "";
+      this.confirmPassword = "";
+      this.passwordError = "";
+    }
   },
-  name: "Inscription",
-  components: {
-    Footer,
-  },
+  mounted() {
+    // Vérifiez si l'utilisateur est déjà connecté
+    const user = localStorage.getItem('user');
+    if (user) {
+      this.$router.push('/');
+    }
+  }
 };
 </script>
 
@@ -217,10 +323,12 @@ label {
 }
 
 .bouton-connexion {
+  margin: auto;
+  align-items: center;
   margin-top: 15px;
   padding: 10px;
-  background: green;
-  color: white;
+  background: white;
+  color: green;
   border: none;
   cursor: pointer;
   border-radius: 4px;
@@ -229,7 +337,7 @@ label {
 }
 
 .bouton-connexion:hover {
-  background: darkgreen;
+  font-weight: bold;
 }
 
 .reussite {
