@@ -1,0 +1,238 @@
+.activites{
+	background-color: white;
+	min-width: 480px;
+	max-width: 1200px;
+	display: flex;
+	align-content: center;
+	gap: 3%;
+	flex-grow: 1;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	padding: 20px 20px 20px 20px;
+	flex-wrap: wrap;
+}
+
+.activite1{
+	border-radius: 10px;
+	margin-bottom: 20px;
+	width: 22.5%;
+	height: 400px;
+	box-shadow: 0px 0px 5px #EEE;
+	flex: 0 0 auto;
+}
+
+.activite1:hover{
+	cursor: pointer;
+	box-shadow: 0px 0px 5px #CCC;
+}
+
+.image2{
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	height: 350px;
+	width: 100%;
+}
+
+.image2 img{
+	height: 100%;
+	object-fit: cover;
+}
+
+.box{	/*Boîte de même hauteur que les autres conteneurs d'activités pour mettre deux activités*/
+	border-radius: 10px;
+	margin-bottom: 20px;
+	width: 22.5%;
+	max-height: 400px;
+	flex: 0 0 auto;
+}
+
+.activite2{
+	border-radius: 10px;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 230px;
+	box-shadow: 0px 0px 5px #EEE;
+}
+
+.activite2:hover{
+	cursor: pointer;
+	box-shadow: 0px 0px 5px #CCC;
+}
+
+.image3{
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	height: 180px;
+	width: 100%;
+	align-items: center;
+}
+
+.image3 img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.activite3{
+	border-radius: 10px;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 150px;
+	box-shadow: 0px 0px 5px #EEE;
+}
+
+.activite3:hover{
+	cursor: pointer;
+	box-shadow: 0px 0px 5px #CCC;
+}
+
+.image4{
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	height: 100px;
+	width: 100%;
+}
+
+.image4 img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.activite4{
+	border-radius: 10px;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 190px;
+	box-shadow: 0px 0px 5px #EEE;
+}
+
+.activite4:hover{
+	cursor: pointer;
+	box-shadow: 0px 0px 5px #CCC;
+}
+
+.image5{
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	height: 140px;
+	width: 100%;
+}
+
+.image5 img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@media (max-width: 768px){
+	.activites{
+		background-color: white;
+		min-width: 360px;
+		max-width: 768px;
+		display: flex;
+		align-content: center;
+		gap: 20px;
+		flex-grow: 1;
+		align-items: center;
+		margin: auto;
+		padding: 20px 20px 20px 20px;
+		flex-wrap: wrap;
+	}
+	.activite1{
+		border-radius: 30px;
+		margin-bottom: 20px;
+		width: 90vw;
+		height: 270px;
+		box-shadow: 0px 0px 5px #EEE;
+		flex: 0 0 auto;
+	}
+	
+	.image2{
+		border-top-left-radius: 30px;
+		border-top-right-radius: 30px;
+		margin-bottom: 20px;
+		overflow: hidden;
+		height: 80%;
+		width: 100%;
+	}
+	
+	.image2 img{
+		width: 100%;
+		object-fit: cover;
+	}
+	
+	.box{
+		display: flex;
+		gap: 20px;
+		flex-direction: column;
+		border-radius: 30px;
+		margin-bottom: 20px;
+		width: 100%;
+		max-height: 800px;
+		flex: 0 0 auto;
+	}
+	
+	.activite2{
+		border-radius: 30px;
+		margin-bottom: 20px;
+		width: 90vw;
+		height: 270px;
+		box-shadow: 0px 0px 5px #EEE;
+		flex: 0 0 auto;
+	}
+	
+	.image3{
+		border-top-left-radius: 30px;
+		border-top-right-radius: 30px;
+		margin-bottom: 20px;
+		overflow: hidden;
+		height: 80%;
+		width: 100%;
+	}
+	
+	.activite3{
+		border-radius: 30px;
+		margin-bottom: 20px;
+		width: 90vw;
+		height: 270px;
+		box-shadow: 0px 0px 5px #EEE;
+		flex: 0 0 auto;
+	}
+	
+	.image4{
+		border-top-left-radius: 30px;
+		border-top-right-radius: 30px;
+		margin-bottom: 20px;
+		overflow: hidden;
+		height: 80%;
+		width: 100%;
+	}
+	
+	.activite4{
+		border-radius: 30px;
+		margin-bottom: 20px;
+		width: 90vw;
+		height: 270px;
+		box-shadow: 0px 0px 5px #EEE;
+		flex: 0 0 auto;
+	}
+	
+	.image5{
+		border-top-left-radius: 30px;
+		border-top-right-radius: 30px;
+		margin-bottom: 20px;
+		overflow: hidden;
+		height: 80%;
+		width: 100%;
+	}
+}
